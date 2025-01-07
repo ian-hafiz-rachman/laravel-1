@@ -78,67 +78,51 @@
         nav ul li a:hover::after {
             width: 100%; /* Lebar garis saat hover */
         }
-        /* Gaya untuk bagian Produk */
-        .products {
-            padding: 80px 20px 40px; /* Padding untuk ruang di dalam, dengan padding atas untuk menghindari header */
-            text-align: center; /* Menyelaraskan teks ke tengah */
+
+        /* Gaya untuk mobile */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Susun vertikal */
+                align-items: flex-start; /* Rata kiri */
+                padding: 10px;
+            }
+
+            nav ul {
+                flex-direction: column; /* Susun menu vertikal */
+                width: 100%;
+                display: none; /* Sembunyikan menu awal */
+                background: #ffffff; /* Latar belakang putih */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.show {
+                display: flex; /* Tampilkan menu jika dibuka */
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Jarak antar item menu */
+            }
+
+            nav ul li a {
+                padding: 10px; /* Perbesar area klik */
+                display: block;
+                width: 100%; /* Penuhi lebar */
+            }
+
+            .menu-toggle {
+                display: block; /* Tampilkan tombol menu */
+                background: none;
+                border: none;
+                font-size: 1.5em;
+                cursor: pointer;
+                margin-left: auto;
+            }
         }
 
-        .products h2 {
-            font-size: 2em; /* Ukuran font untuk judul */
-            margin-bottom: 20px; /* Jarak bawah judul */
-            color: #333; /* Warna teks judul */
-        }
-
-        .product-container {
-            display: flex; /* Menggunakan flexbox untuk tata letak */
-            flex-wrap: wrap; /* Membungkus card ke baris berikutnya jika diperlukan */
-            justify-content: space-between; /* Menyebar card secara merata */
-        }
-
-        .product-card {
-            background-color: #fff; /* Warna latar belakang card */
-            border: 1px solid #ccc; /* Border untuk card */
-            border-radius: 5px; /* Sudut membulat */
-            padding: 20px; /* Padding di dalam card */
-            margin: 10px; /* Margin antar card */
-            width: calc(30% - 20px); /* Lebar card 30% dari container, dikurangi margin */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
-            transition: transform 0.3s; /* Efek transisi untuk hover */
-        }
-
-        .product-card:hover {
-            transform: scale(1.05); /* Efek zoom saat hover */
-        }
-
-        .product-card img {
-            width: 100%; /* Lebar gambar 100% dari card */
-            height: 200px; /* Tinggi tetap untuk semua gambar */
-            object-fit: cover; /* Memastikan gambar mengisi area tanpa merusak proporsi */
-            border-radius: 5px; /* Sudut membulat untuk gambar */
-        }
-
-        .product-card h3 {
-            font-size: 1.5em; /* Ukuran font untuk nama produk */
-            margin-bottom: 10px; /* Jarak bawah nama produk */
-        }
-
-        .product-card p {
-            font-size: 1em; /* Ukuran font untuk deskripsi */
-            margin-bottom: 15px; /* Jarak bawah deskripsi */
-        }
-
-        .product-card button {
-            background-color: #333; /* Warna latar belakang tombol */
-            color: #fff; /* Warna teks tombol */
-            border: none; /* Menghapus border */
-            padding: 10px 15px; /* Padding untuk tombol */
-            cursor: pointer; /* Menunjukkan bahwa tombol dapat dik lik */
-            transition: background 0.3s; /* Efek transisi untuk hover tombol */
-        }
-
-        .product-card button:hover {
-            background-color: #555; /* Warna latar belakang tombol saat hover */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none; /* Sembunyikan tombol menu di layar besar */
+            }
         }
 
         /* Footer */
